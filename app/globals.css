@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  /* SCOUT design tokens */
+  --paper: #FAF9F6;
+  --paper-dim: #F1EFE9;
+  --ink: #12203D;        /* primary navy */
+  --ink-soft: #2C3E5E;
+  --brass: #C9922E;      /* badge / match accent */
+  --brass-soft: #F3E3C4;
+  --forest: #2F6B4F;     /* verified / success */
+  --forest-soft: #E1EFE6;
+  --clay: #B5482F;       /* expired / alert */
+  --clay-soft: #F5E1DB;
+  --line: #E4E0D6;
+  --muted: #6B6558;
+
+  /* Category accent palette — playful but not neon, used for chips/tiles */
+  --sky: #2B6CB0;
+  --sky-soft: #DCE9F7;
+  --coral: #D1554A;
+  --coral-soft: #F7DEDB;
+  --violet: #6D4FA6;
+  --violet-soft: #E8E1F5;
+  --teal: #1E8A7A;
+  --teal-soft: #DCF1EC;
+  --sun: #C77D1E;
+  --sun-soft: #F6E3C9;
+  --rose: #B5477A;
+  --rose-soft: #F5DEEA;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-dim: var(--paper-dim);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-brass: var(--brass);
+  --color-brass-soft: var(--brass-soft);
+  --color-forest: var(--forest);
+  --color-forest-soft: var(--forest-soft);
+  --color-clay: var(--clay);
+  --color-clay-soft: var(--clay-soft);
+  --color-line: var(--line);
+  --color-muted: var(--muted);
+  --color-sky: var(--sky);
+  --color-sky-soft: var(--sky-soft);
+  --color-coral: var(--coral);
+  --color-coral-soft: var(--coral-soft);
+  --color-violet: var(--violet);
+  --color-violet-soft: var(--violet-soft);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+  --color-sun: var(--sun);
+  --color-sun-soft: var(--sun-soft);
+  --color-rose: var(--rose);
+  --color-rose-soft: var(--rose-soft);
+
+  --font-display: var(--font-space-grotesk);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.hero-bg {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(201, 146, 46, 0.16), transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(43, 108, 176, 0.14), transparent 42%),
+    radial-gradient(circle at 60% 90%, rgba(30, 138, 122, 0.12), transparent 45%);
+}
+
+.lift-on-hover {
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+.lift-on-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(18, 32, 61, 0.10);
+}

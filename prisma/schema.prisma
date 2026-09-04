@@ -1,0 +1,193 @@
+// SCOUT — database schema
+// Run `npx prisma migrate dev` after setting DATABASE_URL in .env
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  STUDENT
+  ADMIN
+}
+
+enum RemotePreference {
+  REMOTE_ONLY
+  IN_PERSON_ONLY
+  NO_PREFERENCE
+}
+
+enum Category {
+  SCHOLARSHIP
+  INTERNSHIP
+  RESEARCH
+  SUMMER_PROGRAM
+  COMPETITION
+  FELLOWSHIP
+  VOLUNTEER
+  LEADERSHIP
+  OTHER
+}
+
+enum RemoteType {
+  REMOTE
+  IN_PERSON
+  HYBRID
+}
+
+enum Cost {
+  FREE
+  PAID
+}
+
+enum ExperienceRequired {
+  NONE
+  SOME
+  SIGNIFICANT
+}
+
+enum VerificationStatus {
+  VERIFIED
+  NEEDS_VERIFICATION
+  EXPIRED
+}
+
+enum SavedStatus {
+  INTERESTED
+  APPLYING
+  SUBMITTED
+  ACCEPTED
+  REJECTED
+}
+
+enum ReportType {
+  EXPIRED
+  WRONG_DEADLINE
+  WRONG_ELIGIBILITY
+  BROKEN_LINK
+  SUSPICIOUS
+  OTHER
+}
+
+enum ReportStatus {
+  OPEN
+  REVIEWED
+  RESOLVED
+  DISMISSED
+}
+
+model User {
+  id                   String             @id @default(uuid())
+  email                String             @unique
+  passwordHash         String?
+  displayName          String
+  role                 Role               @default(STUDENT)
+  grade                Int?
+  state                String?
+  country              String?
+  gpa                  Decimal?           @db.Decimal(3, 2)
+  academicInterests    String[]           @default([])
+  careerInterests      String[]           @default([])
+  preferredCategories  Category[]         @default([])
+  preferredLocation    String?
+  remotePreference     RemotePreference   @default(NO_PREFERENCE)
+  hasPriorExperience   Boolean            @default(false)
+
+  savedOpportunities   SavedOpportunity[]
+  applications         Application[]
+  reports              Report[]
+
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+}
+
+model Opportunity {
+  id                     String              @id @default(uuid())
+  title                  String
+  organization           String
+  category               Category
+  description            String
+  eligibilityText        String
+  tags                   String[]            @default([]) // for interest matching
+
+  gradeMin               Int
+  gradeMax               Int
+  gpaRequirement         Decimal?            @db.Decimal(3, 2)
+  ageMin                 Int?
+  ageMax                 Int?
+
+  location               String?
+  remote                 RemoteType
+  cost                   Cost
+  costAmount             Decimal?            @db.Decimal(10, 2)
+  award                  Decimal?            @db.Decimal(10, 2)
+
+  deadline               DateTime
+  startDate              DateTime?
+  durationText           String?
+  experienceRequired     ExperienceRequired  @default(NONE)
+  requiredMaterials      String[]            @default([])
+  applicationProcessText String?
+
+  officialUrl            String
+  sourceUrl              String?
+  verificationStatus     VerificationStatus  @default(NEEDS_VERIFICATION)
+  lastVerifiedAt         DateTime?
+  isDemoData             Boolean             @default(false)
+
+  savedBy                SavedOpportunity[]
+  applications           Application[]
+  reports                Report[]
+
+  createdAt              DateTime            @default(now())
+  updatedAt              DateTime            @updatedAt
+
+  @@index([category, deadline])
+  @@index([gradeMin, gradeMax])
+  @@index([verificationStatus])
+}
+
+model SavedOpportunity {
+  id             String       @id @default(uuid())
+  userId         String
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  opportunityId  String
+  opportunity    Opportunity  @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  status         SavedStatus  @default(INTERESTED)
+  createdAt      DateTime     @default(now())
+
+  @@unique([userId, opportunityId])
+}
+
+model Application {
+  id             String       @id @default(uuid())
+  userId         String
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  opportunityId  String
+  opportunity    Opportunity  @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  status         SavedStatus  @default(INTERESTED)
+  dateStarted    DateTime?
+  dateSubmitted  DateTime?
+  notes          String?
+  checklist      Json?        // [{ label: string, done: boolean }]
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  @@unique([userId, opportunityId])
+}
+
+model Report {
+  id             String       @id @default(uuid())
+  userId         String
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  opportunityId  String
+  opportunity    Opportunity  @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  reportType     ReportType
+  description    String?
+  status         ReportStatus @default(OPEN)
+  createdAt      DateTime     @default(now())
+}
