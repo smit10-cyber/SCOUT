@@ -3,15 +3,32 @@ import { regionalOpportunities } from "./regional-data";
 import { CAPITAL_REGION_TAG } from "./constants";
 
 /**
- * Returns the real, sourced opportunities used throughout SCOUT.
+ * Returns opportunities that are accessible to students
+ * in the Capital Region.
  *
- * Duplicate opportunity IDs are removed so the same opportunity
- * cannot appear multiple times on the Explore page.
+ * We keep:
+ * - Opportunities physically located in the Capital Region
+ * - Remote opportunities that students can complete from the Capital Region
+ * - National opportunities that do not require students
+ *   to physically travel outside the Capital Region
+ *
+ * We remove:
+ * - In-person opportunities that require students to be
+ *   physically located outside the Capital Region.
+ *
+ * Duplicate opportunity IDs are also removed.
  */
 export function getAllOpportunities(): Opportunity[] {
   const uniqueOpportunities = new Map<string, Opportunity>();
 
   for (const opportunity of regionalOpportunities) {
+    // Remove BAE Systems because the internship requires
+    // students to be physically present in Southern New Hampshire.
+    if (opportunity.id === "bae-systems-software-intern-high-school-2027") {
+      continue;
+    }
+
+    // Prevent duplicate opportunities from appearing.
     if (!uniqueOpportunities.has(opportunity.id)) {
       uniqueOpportunities.set(opportunity.id, opportunity);
     }
