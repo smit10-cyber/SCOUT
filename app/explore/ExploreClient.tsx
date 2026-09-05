@@ -20,15 +20,20 @@ export default function ExploreClient({
   opportunities: Opportunity[];
 }) {
   const searchParams = useSearchParams();
+
   const initialCategory = searchParams.get("category") as Category | null;
   const initialRegion = searchParams.get("region");
+  const profileMatchesOnly =
+    searchParams.get("matches") === "profile";
 
   const [query, setQuery] = useState("");
+
   const [filters, setFilters] = useState<Filters>({
     ...EMPTY_FILTERS,
     categories: initialCategory ? [initialCategory] : [],
     capitalRegionOnly: initialRegion === "capital",
   });
+
   const [showFilters, setShowFilters] = useState(false);
 
   const { isSaved, toggleSave } = useSavedOpportunities();
@@ -63,9 +68,13 @@ export default function ExploreClient({
         return false;
       }
 
-      if (filters.remoteOnly && o.remote === "IN_PERSON") return false;
+      if (filters.remoteOnly && o.remote === "IN_PERSON") {
+        return false;
+      }
 
-      if (filters.freeOnly && o.cost !== "FREE") return false;
+      if (filters.freeOnly && o.cost !== "FREE") {
+        return false;
+      }
 
       if (
         filters.noExperienceOnly &&
@@ -86,15 +95,33 @@ export default function ExploreClient({
   }, [opportunities, query, filters]);
 
   const scoredOpportunities = useMemo(() => {
-    if (!hasProfile) return filtered;
+    return filtered
+      .map((opp) => ({
+        opp,
+        match: hasProfile
+          ? scoreOpportunity(opp, profile)
+          : null,
+      }))
+      .filter((item) => {
+        if (!profileMatchesOnly) return true;
 
-    return [...filtered].sort((a, b) => {
-      const scoreA = scoreOpportunity(a, profile).score;
-      const scoreB = scoreOpportunity(b, profile).score;
+        return (
+          hasProfile &&
+          item.match !== null &&
+          !item.match.disqualified
+        );
+      })
+      .sort((a, b) => {
+        if (!a.match || !b.match) return 0;
 
-      return scoreB - scoreA;
-    });
-  }, [filtered, hasProfile, profile]);
+        return b.match.score - a.match.score;
+      });
+  }, [
+    filtered,
+    hasProfile,
+    profile,
+    profileMatchesOnly,
+  ]);
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
@@ -104,8 +131,9 @@ export default function ExploreClient({
         </h1>
 
         <p className="mt-2 text-ink-soft">
-          Search and filter scholarships, internships, research, and more —
-          including opportunities local to the Capital Region.
+          Search and filter scholarships, internships, research,
+          and more — including opportunities local to the Capital
+          Region.
         </p>
       </div>
 
@@ -116,15 +144,17 @@ export default function ExploreClient({
               <span className="font-medium text-ink">
                 Your match scores are personalized.
               </span>{" "}
-              SCOUT uses your profile, including your grade, interests,
-              preferred categories, location preferences, GPA, and experience.
+              SCOUT uses your profile, including your grade,
+              interests, preferred categories, location
+              preferences, GPA, and experience.
             </>
           ) : (
             <>
               <span className="font-medium text-ink">
                 Complete your profile
               </span>{" "}
-              to get personalized match scores for each opportunity.
+              to get personalized match scores for each
+              opportunity.
             </>
           )}
         </div>
@@ -157,7 +187,11 @@ export default function ExploreClient({
       </div>
 
       <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-[240px_1fr]">
-        <aside className={showFilters ? "block" : "hidden md:block"}>
+        <aside
+          className={
+            showFilters ? "block" : "hidden md:block"
+          }
+        >
           <FilterPanel
             filters={filters}
             onChange={setFilters}
@@ -167,14 +201,15 @@ export default function ExploreClient({
         <div>
           <p className="mb-4 text-sm text-muted">
             {scoredOpportunities.length} opportunit
-            {scoredOpportunities.length === 1 ? "y" : "ies"}
+            {scoredOpportunities.length === 1
+              ? "y"
+              : "ies"}
 
-            {hasProfile && (
-              <span>
-                {" "}
-                — sorted by your match score
-              </span>
-            )}
+            {profileMatchesOnly && hasProfile ? (
+              <span> — matching your profile</span>
+            ) : hasProfile ? (
+              <span> — sorted by your match score</span>
+            ) : null}
           </p>
 
           {scoredOpportunities.length === 0 ? (
@@ -184,24 +219,23 @@ export default function ExploreClient({
               </p>
 
               <p className="mt-1.5 text-sm text-muted">
-                Try clearing a filter or searching a broader term.
+                Try clearing a filter or searching a broader
+                term.
               </p>
             </div>
           ) : (
             <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-              {scoredOpportunities.map((opp) => (
-                <OpportunityCard
-                  key={opp.id}
-                  opportunity={opp}
-                  match={
-                    hasProfile
-                      ? scoreOpportunity(opp, profile)
-                      : undefined
-                  }
-                  saved={isSaved(opp.id)}
-                  onSave={toggleSave}
-                />
-              ))}
+              {scoredOpportunities.map(
+                ({ opp, match }) => (
+                  <OpportunityCard
+                    key={opp.id}
+                    opportunity={opp}
+                    match={match ?? undefined}
+                    saved={isSaved(opp.id)}
+                    onSave={toggleSave}
+                  />
+                )
+              )}
             </div>
           )}
         </div>
