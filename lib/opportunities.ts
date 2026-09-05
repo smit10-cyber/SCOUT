@@ -3,26 +3,32 @@ import { regionalOpportunities } from "./regional-data";
 import { CAPITAL_REGION_TAG } from "./constants";
 
 /**
- * In the MVP this reads from a static array of real, sourced opportunities
- * (see lib/regional-data.ts — every record cites its official source).
+ * Returns the real, sourced opportunities used throughout SCOUT.
  *
- * Fictional placeholder records used only during development live in
- * lib/demo-data.ts and are intentionally NOT included here, so nothing fake
- * is ever shown to a real visitor. If you're adding test data while
- * building a new feature, import demoOpportunities directly in your own
- * dev/test code — don't wire it back into this function.
- *
- * Once Prisma/Postgres is wired up (see prisma/schema.prisma), swap the
- * body of these functions for `db.opportunity.findMany(...)` /
- * `findUnique(...)` calls — callers elsewhere in the app don't need to
- * change.
+ * Duplicate opportunity IDs are removed so the same opportunity
+ * cannot appear multiple times on the Explore page.
  */
 export function getAllOpportunities(): Opportunity[] {
-  return [...regionalOpportunities];
+  const uniqueOpportunities = new Map<string, Opportunity>();
+
+  for (const opportunity of regionalOpportunities) {
+    if (!uniqueOpportunities.has(opportunity.id)) {
+      uniqueOpportunities.set(opportunity.id, opportunity);
+    }
+  }
+
+  return Array.from(uniqueOpportunities.values());
 }
 
-export function getOpportunityById(id: string): Opportunity | undefined {
-  return getAllOpportunities().find((o) => o.id === id);
+/**
+ * Finds one opportunity by its unique ID.
+ */
+export function getOpportunityById(
+  id: string
+): Opportunity | undefined {
+  return getAllOpportunities().find(
+    (opportunity) => opportunity.id === id
+  );
 }
 
 export { CAPITAL_REGION_TAG };
