@@ -371,4 +371,691 @@ export const regionalOpportunities: Opportunity[] = [
     isDemoData: false,
     regionTag: "Capital Region, NY",
   },
+  {
+    id: "coca-cola-scholars-2027",
+    title: "Coca-Cola Scholars Program",
+    organization: "Coca-Cola Scholars Foundation",
+    category: "SCHOLARSHIP",
+    description:
+      "A national achievement-based scholarship for high school seniors. 150 students are selected each year to receive a $20,000 college scholarship.",
+    eligibilityText:
+      "High school students graduating during the 2026–2027 academic year who meet the program's eligibility requirements.",
+    tags: [
+      "scholarship",
+      "leadership",
+      "community service",
+      "academic achievement",
+    ],
+    gradeMin: 12,
+    gradeMax: 12,
+    gpaRequirement: null,
+    location: "United States",
+    remote: "REMOTE",
+    cost: "FREE",
+    costAmount: null,
+    award: 20000,
+    deadline: "2026-09-30",
+    deadlineNote:
+      "Application closes September 30, 2026 at 5:00 PM Eastern.",
+    availabilityWindow:
+      "2027 application is open August 3 through September 30, 2026.",
+    startDate: null,
+    durationText: null,
+    experienceRequired: "NONE",
+    requiredMaterials: [],
+    applicationProcessText:
+      "Apply through the official Coca-Cola Scholars Foundation application.",
+    officialUrl:
+      "https://www.coca-colascholarsfoundation.org/apply/",
+    sourceUrl:
+      "https://www.coca-colascholarsfoundation.org/apply/",
+    verificationStatus: "VERIFIED",
+    lastVerifiedAt: "2026-09-05",
+    isDemoData: false,
+    regionTag: null,
+  },
+
+  {
+    id: "bae-systems-software-intern-high-school-2027",
+    title: "Software Intern (High School) – Summer 2027",
+    organization: "BAE Systems, Inc.",
+    category: "INTERNSHIP",
+    description:
+      "A paid software engineering internship for students graduating high school before Summer 2027 and entering an undergraduate computer science, computer engineering, or related program.",
+    eligibilityText:
+      "Must graduate high school before Summer 2027, enroll in an undergraduate CS, CE, or related program, have programming experience in C, C++, Java, or Python, be a U.S. citizen, and be eligible for a U.S. Department of Defense security clearance.",
+    tags: [
+      "computer science",
+      "software",
+      "programming",
+      "engineering",
+      "technology",
+      "python",
+      "java",
+      "c++",
+    ],
+    gradeMin: 12,
+    gradeMax: 12,
+    gpaRequirement: null,
+    location: "Southern New Hampshire",
+    remote: "IN_PERSON",
+    cost: "FREE",
+    costAmount: null,
+    award: null,
+    deadline: "2026-09-26",
+    deadlineNote:
+      "Current listing expires September 26, 2026.",
+    availabilityWindow:
+      "Summer 2027 internship; current recruitment began August 26, 2026.",
+    startDate: "2027-06-01",
+    durationText: "Summer 2027",
+    experienceRequired: "SOME",
+    requiredMaterials: [],
+    applicationProcessText:
+      "Apply through the current BAE Systems internship listing.",
+    officialUrl:
+      "https://career.albany.edu/jobs/bae-systems-inc-software-intern-high-school-summer-2027-onsite/",
+    sourceUrl:
+      "https://career.albany.edu/jobs/bae-systems-inc-software-intern-high-school-summer-2027-onsite/",
+    verificationStatus: "VERIFIED",
+    lastVerifiedAt: "2026-09-05",
+    isDemoData: false,
+    regionTag: null,
+  },
+
+  {
+    id: "ualbany-in-high-school-2026-2027",
+    title: "UAlbany in the High School",
+    organization: "University at Albany",
+    category: "OTHER",
+    description:
+      "A college-credit program that allows qualified high school students to earn University at Albany credit while still in high school.",
+    eligibilityText:
+      "Available to qualified high school students through participating high schools. Course eligibility and requirements vary.",
+    tags: [
+      "college credit",
+      "dual enrollment",
+      "academic",
+      "college preparation",
+    ],
+    gradeMin: 9,
+    gradeMax: 12,
+    gpaRequirement: null,
+    location: "Albany, NY / Participating High Schools",
+    remote: "HYBRID",
+    cost: "PAID",
+    costAmount: null,
+    award: null,
+    deadline: "2026-11-06",
+    deadlineNote:
+      "Fall registration runs September 7 through November 6, 2026. Full-year registration runs through December 11, 2026.",
+    availabilityWindow:
+      "Currently registering for the 2026–2027 academic year.",
+    startDate: "2026-09-07",
+    durationText: "Varies by course",
+    experienceRequired: "NONE",
+    requiredMaterials: [],
+    applicationProcessText:
+      "Students must register through the UAlbany in the High School program and participating school.",
+    officialUrl:
+      "https://www.albany.edu/uhs",
+    sourceUrl:
+      "https://epay.albany.edu/C21455_ustores/web/store_main.jsp?STOREID=13",
+    verificationStatus: "VERIFIED",
+    lastVerifiedAt: "2026-09-05",
+    isDemoData: false,
+    regionTag: "Capital Region, NY",
+  },
+
+  {
+    id: "capital-district-high-school-science-bowl-2027",
+    title: "Capital District High School Regional Science Bowl",
+    organization: "U.S. Department of Energy National Science Bowl",
+    category: "COMPETITION",
+    description:
+      "A regional high school science and mathematics competition hosted at GE Global Research in Niskayuna.",
+    eligibilityText:
+      "High school students participating as members of a school team. A teacher or approved coach must handle the team registration.",
+    tags: [
+      "science",
+      "stem",
+      "math",
+      "physics",
+      "chemistry",
+      "biology",
+      "earth science",
+      "competition",
+    ],
+    gradeMin: 9,
+    gradeMax: 12,
+    gpaRequirement: null,
+    location: "Niskayuna, NY",
+    remote: "IN_PERSON",
+    cost: "FREE",
+    costAmount: null,
+    award: null,
+    deadline: "2026-11-23",
+    deadlineNote:
+      "Coach preregistration opens October 5, 2026 at noon Eastern. Team 1 registration must be submitted before November 24, 2026.",
+    availabilityWindow:
+      "2027 regional competition; registration opens October 5, 2026.",
+    startDate: "2027-03-06",
+    durationText: "One-day regional competition",
+    experienceRequired: "NONE",
+    requiredMaterials: [],
+    applicationProcessText:
+      "Students participate through a school team. A coach must complete the school and team registration process.",
+    officialUrl:
+      "https://science.osti.gov/wdts/nsb/Regional-Competitions/High-School-Regionals/New-York/NY_New-York-State-Capital-District-High-School-Regional-Science-Bowl",
+    sourceUrl:
+      "https://science.osti.gov/wdts/nsb/Regional-Competitions/High-School-Regionals/New-York/NY_New-York-State-Capital-District-High-School-Regional-Science-Bowl",
+    verificationStatus: "VERIFIED",
+    lastVerifiedAt: "2026-09-05",
+    isDemoData: false,
+    regionTag: "Capital Region, NY",
+  },
+
+  {
+    id: "seaside-sustainability-high-school-internship",
+    title: "Seaside Sustainability High School Internship",
+    organization: "Seaside Sustainability",
+    category: "INTERNSHIP",
+    description:
+      "A flexible environmental internship where high school students can work on sustainability, environmental science, research, education, communications, and other projects.",
+    eligibilityText:
+      "High school students may apply. The organization supports both local and virtual interns, with roles depending on current projects and team needs.",
+    tags: [
+      "environment",
+      "sustainability",
+      "environmental science",
+      "research",
+      "leadership",
+      "virtual",
+    ],
+    gradeMin: 9,
+    gradeMax: 12,
+    gpaRequirement: null,
+    location: "United States / Virtual",
+    remote: "REMOTE",
+    cost: "FREE",
+    costAmount: null,
+    award: null,
+    deadline: null,
+    deadlineNote:
+      "No single current deadline is listed; the organization states that it is continually looking for part-time interns.",
+    availabilityWindow:
+      "Ongoing internship opportunities; availability depends on current projects.",
+    startDate: null,
+    durationText: "Part-time; varies by project",
+    experienceRequired: "NONE",
+    requiredMaterials: [],
+    applicationProcessText:
+      "Review current internship opportunities and apply through Seaside Sustainability.",
+    officialUrl:
+      "https://www.seasidesustainability.org/internship-details",
+    sourceUrl:
+      "https://www.seasidesustainability.org/internship-details",
+    verificationStatus: "VERIFIED",
+    lastVerifiedAt: "2026-09-05",
+    isDemoData: false,
+    regionTag: null,
+  },
+  {
+    id: "coca-cola-scholars-2027",
+    title: "Coca-Cola Scholars Program",
+    organization: "Coca-Cola Scholars Foundation",
+    category: "SCHOLARSHIP",
+    description:
+      "A national achievement-based scholarship for high school seniors. 150 students are selected each year to receive a $20,000 college scholarship.",
+    eligibilityText:
+      "High school students graduating during the 2026–2027 academic year who meet the program's eligibility requirements.",
+    tags: [
+      "scholarship",
+      "leadership",
+      "community service",
+      "academic achievement",
+    ],
+    gradeMin: 12,
+    gradeMax: 12,
+    gpaRequirement: null,
+    location: "United States",
+    remote: "REMOTE",
+    cost: "FREE",
+    costAmount: null,
+    award: 20000,
+    deadline: "2026-09-30",
+    deadlineNote:
+      "Application closes September 30, 2026 at 5:00 PM Eastern.",
+    availabilityWindow:
+      "2027 application is open August 3 through September 30, 2026.",
+    startDate: null,
+    durationText: null,
+    experienceRequired: "NONE",
+    requiredMaterials: [],
+    applicationProcessText:
+      "Apply through the official Coca-Cola Scholars Foundation application.",
+    officialUrl:
+      "https://www.coca-colascholarsfoundation.org/apply/",
+    sourceUrl:
+      "https://www.coca-colascholarsfoundation.org/apply/",
+    verificationStatus: "VERIFIED",
+    lastVerifiedAt: "2026-09-05",
+    isDemoData: false,
+    regionTag: null,
+  },
+
+  {
+    id: "bae-systems-software-intern-high-school-2027",
+    title: "Software Intern (High School) – Summer 2027",
+    organization: "BAE Systems, Inc.",
+    category: "INTERNSHIP",
+    description:
+      "A paid software engineering internship for students graduating high school before Summer 2027 and entering an undergraduate computer science, computer engineering, or related program.",
+    eligibilityText:
+      "Must graduate high school before Summer 2027, enroll in an undergraduate CS, CE, or related program, have programming experience in C, C++, Java, or Python, be a U.S. citizen, and be eligible for a U.S. Department of Defense security clearance.",
+    tags: [
+      "computer science",
+      "software",
+      "programming",
+      "engineering",
+      "technology",
+      "python",
+      "java",
+      "c++",
+    ],
+    gradeMin: 12,
+    gradeMax: 12,
+    gpaRequirement: null,
+    location: "Southern New Hampshire",
+    remote: "IN_PERSON",
+    cost: "FREE",
+    costAmount: null,
+    award: null,
+    deadline: "2026-09-26",
+    deadlineNote:
+      "Current listing expires September 26, 2026.",
+    availabilityWindow:
+      "Summer 2027 internship; current recruitment began August 26, 2026.",
+    startDate: "2027-06-01",
+    durationText: "Summer 2027",
+    experienceRequired: "SOME",
+    requiredMaterials: [],
+    applicationProcessText:
+      "Apply through the current BAE Systems internship listing.",
+    officialUrl:
+      "https://career.albany.edu/jobs/bae-systems-inc-software-intern-high-school-summer-2027-onsite/",
+    sourceUrl:
+      "https://career.albany.edu/jobs/bae-systems-inc-software-intern-high-school-summer-2027-onsite/",
+    verificationStatus: "VERIFIED",
+    lastVerifiedAt: "2026-09-05",
+    isDemoData: false,
+    regionTag: null,
+  },
+
+  {
+    id: "ualbany-in-high-school-2026-2027",
+    title: "UAlbany in the High School",
+    organization: "University at Albany",
+    category: "OTHER",
+    description:
+      "A college-credit program that allows qualified high school students to earn University at Albany credit while still in high school.",
+    eligibilityText:
+      "Available to qualified high school students through participating high schools. Course eligibility and requirements vary.",
+    tags: [
+      "college credit",
+      "dual enrollment",
+      "academic",
+      "college preparation",
+    ],
+    gradeMin: 9,
+    gradeMax: 12,
+    gpaRequirement: null,
+    location: "Albany, NY / Participating High Schools",
+    remote: "HYBRID",
+    cost: "PAID",
+    costAmount: null,
+    award: null,
+    deadline: "2026-11-06",
+    deadlineNote:
+      "Fall registration runs September 7 through November 6, 2026. Full-year registration runs through December 11, 2026.",
+    availabilityWindow:
+      "Currently registering for the 2026–2027 academic year.",
+    startDate: "2026-09-07",
+    durationText: "Varies by course",
+    experienceRequired: "NONE",
+    requiredMaterials: [],
+    applicationProcessText:
+      "Students must register through the UAlbany in the High School program and participating school.",
+    officialUrl:
+      "https://www.albany.edu/uhs",
+    sourceUrl:
+      "https://epay.albany.edu/C21455_ustores/web/store_main.jsp?STOREID=13",
+    verificationStatus: "VERIFIED",
+    lastVerifiedAt: "2026-09-05",
+    isDemoData: false,
+    regionTag: "Capital Region, NY",
+  },
+
+  {
+    id: "capital-district-high-school-science-bowl-2027",
+    title: "Capital District High School Regional Science Bowl",
+    organization: "U.S. Department of Energy National Science Bowl",
+    category: "COMPETITION",
+    description:
+      "A regional high school science and mathematics competition hosted at GE Global Research in Niskayuna.",
+    eligibilityText:
+      "High school students participating as members of a school team. A teacher or approved coach must handle the team registration.",
+    tags: [
+      "science",
+      "stem",
+      "math",
+      "physics",
+      "chemistry",
+      "biology",
+      "earth science",
+      "competition",
+    ],
+    gradeMin: 9,
+    gradeMax: 12,
+    gpaRequirement: null,
+    location: "Niskayuna, NY",
+    remote: "IN_PERSON",
+    cost: "FREE",
+    costAmount: null,
+    award: null,
+    deadline: "2026-11-23",
+    deadlineNote:
+      "Coach preregistration opens October 5, 2026 at noon Eastern. Team 1 registration must be submitted before November 24, 2026.",
+    availabilityWindow:
+      "2027 regional competition; registration opens October 5, 2026.",
+    startDate: "2027-03-06",
+    durationText: "One-day regional competition",
+    experienceRequired: "NONE",
+    requiredMaterials: [],
+    applicationProcessText:
+      "Students participate through a school team. A coach must complete the school and team registration process.",
+    officialUrl:
+      "https://science.osti.gov/wdts/nsb/Regional-Competitions/High-School-Regionals/New-York/NY_New-York-State-Capital-District-High-School-Regional-Science-Bowl",
+    sourceUrl:
+      "https://science.osti.gov/wdts/nsb/Regional-Competitions/High-School-Regionals/New-York/NY_New-York-State-Capital-District-High-School-Regional-Science-Bowl",
+    verificationStatus: "VERIFIED",
+    lastVerifiedAt: "2026-09-05",
+    isDemoData: false,
+    regionTag: "Capital Region, NY",
+  },
+
+  {
+    id: "seaside-sustainability-high-school-internship",
+    title: "Seaside Sustainability High School Internship",
+    organization: "Seaside Sustainability",
+    category: "INTERNSHIP",
+    description:
+      "A flexible environmental internship where high school students can work on sustainability, environmental science, research, education, communications, and other projects.",
+    eligibilityText:
+      "High school students may apply. The organization supports both local and virtual interns, with roles depending on current projects and team needs.",
+    tags: [
+      "environment",
+      "sustainability",
+      "environmental science",
+      "research",
+      "leadership",
+      "virtual",
+    ],
+    gradeMin: 9,
+    gradeMax: 12,
+    gpaRequirement: null,
+    location: "United States / Virtual",
+    remote: "REMOTE",
+    cost: "FREE",
+    costAmount: null,
+    award: null,
+    deadline: null,
+    deadlineNote:
+      "No single current deadline is listed; the organization states that it is continually looking for part-time interns.",
+    availabilityWindow:
+      "Ongoing internship opportunities; availability depends on current projects.",
+    startDate: null,
+    durationText: "Part-time; varies by project",
+    experienceRequired: "NONE",
+    requiredMaterials: [],
+    applicationProcessText:
+      "Review current internship opportunities and apply through Seaside Sustainability.",
+    officialUrl:
+      "https://www.seasidesustainability.org/internship-details",
+    sourceUrl:
+      "https://www.seasidesustainability.org/internship-details",
+    verificationStatus: "VERIFIED",
+    lastVerifiedAt: "2026-09-05",
+    isDemoData: false,
+    regionTag: null,
+  },
+  {
+    id: "coca-cola-scholars-2027",
+    title: "Coca-Cola Scholars Program",
+    organization: "Coca-Cola Scholars Foundation",
+    category: "SCHOLARSHIP",
+    description:
+      "A national achievement-based scholarship for high school seniors. 150 students are selected each year to receive a $20,000 college scholarship.",
+    eligibilityText:
+      "High school students graduating during the 2026–2027 academic year who meet the program's eligibility requirements.",
+    tags: [
+      "scholarship",
+      "leadership",
+      "community service",
+      "academic achievement",
+    ],
+    gradeMin: 12,
+    gradeMax: 12,
+    gpaRequirement: null,
+    location: "United States",
+    remote: "REMOTE",
+    cost: "FREE",
+    costAmount: null,
+    award: 20000,
+    deadline: "2026-09-30",
+    deadlineNote:
+      "Application closes September 30, 2026 at 5:00 PM Eastern.",
+    availabilityWindow:
+      "2027 application is open August 3 through September 30, 2026.",
+    startDate: null,
+    durationText: null,
+    experienceRequired: "NONE",
+    requiredMaterials: [],
+    applicationProcessText:
+      "Apply through the official Coca-Cola Scholars Foundation application.",
+    officialUrl:
+      "https://www.coca-colascholarsfoundation.org/apply/",
+    sourceUrl:
+      "https://www.coca-colascholarsfoundation.org/apply/",
+    verificationStatus: "VERIFIED",
+    lastVerifiedAt: "2026-09-05",
+    isDemoData: false,
+    regionTag: null,
+  },
+
+  {
+    id: "bae-systems-software-intern-high-school-2027",
+    title: "Software Intern (High School) – Summer 2027",
+    organization: "BAE Systems, Inc.",
+    category: "INTERNSHIP",
+    description:
+      "A paid software engineering internship for students graduating high school before Summer 2027 and entering an undergraduate computer science, computer engineering, or related program.",
+    eligibilityText:
+      "Must graduate high school before Summer 2027, enroll in an undergraduate CS, CE, or related program, have programming experience in C, C++, Java, or Python, be a U.S. citizen, and be eligible for a U.S. Department of Defense security clearance.",
+    tags: [
+      "computer science",
+      "software",
+      "programming",
+      "engineering",
+      "technology",
+      "python",
+      "java",
+      "c++",
+    ],
+    gradeMin: 12,
+    gradeMax: 12,
+    gpaRequirement: null,
+    location: "Southern New Hampshire",
+    remote: "IN_PERSON",
+    cost: "FREE",
+    costAmount: null,
+    award: null,
+    deadline: "2026-09-26",
+    deadlineNote:
+      "Current listing expires September 26, 2026.",
+    availabilityWindow:
+      "Summer 2027 internship; current recruitment began August 26, 2026.",
+    startDate: "2027-06-01",
+    durationText: "Summer 2027",
+    experienceRequired: "SOME",
+    requiredMaterials: [],
+    applicationProcessText:
+      "Apply through the current BAE Systems internship listing.",
+    officialUrl:
+      "https://career.albany.edu/jobs/bae-systems-inc-software-intern-high-school-summer-2027-onsite/",
+    sourceUrl:
+      "https://career.albany.edu/jobs/bae-systems-inc-software-intern-high-school-summer-2027-onsite/",
+    verificationStatus: "VERIFIED",
+    lastVerifiedAt: "2026-09-05",
+    isDemoData: false,
+    regionTag: null,
+  },
+
+  {
+    id: "ualbany-in-high-school-2026-2027",
+    title: "UAlbany in the High School",
+    organization: "University at Albany",
+    category: "OTHER",
+    description:
+      "A college-credit program that allows qualified high school students to earn University at Albany credit while still in high school.",
+    eligibilityText:
+      "Available to qualified high school students through participating high schools. Course eligibility and requirements vary.",
+    tags: [
+      "college credit",
+      "dual enrollment",
+      "academic",
+      "college preparation",
+    ],
+    gradeMin: 9,
+    gradeMax: 12,
+    gpaRequirement: null,
+    location: "Albany, NY / Participating High Schools",
+    remote: "HYBRID",
+    cost: "PAID",
+    costAmount: null,
+    award: null,
+    deadline: "2026-11-06",
+    deadlineNote:
+      "Fall registration runs September 7 through November 6, 2026. Full-year registration runs through December 11, 2026.",
+    availabilityWindow:
+      "Currently registering for the 2026–2027 academic year.",
+    startDate: "2026-09-07",
+    durationText: "Varies by course",
+    experienceRequired: "NONE",
+    requiredMaterials: [],
+    applicationProcessText:
+      "Students must register through the UAlbany in the High School program and participating school.",
+    officialUrl:
+      "https://www.albany.edu/uhs",
+    sourceUrl:
+      "https://epay.albany.edu/C21455_ustores/web/store_main.jsp?STOREID=13",
+    verificationStatus: "VERIFIED",
+    lastVerifiedAt: "2026-09-05",
+    isDemoData: false,
+    regionTag: "Capital Region, NY",
+  },
+
+  {
+    id: "capital-district-high-school-science-bowl-2027",
+    title: "Capital District High School Regional Science Bowl",
+    organization: "U.S. Department of Energy National Science Bowl",
+    category: "COMPETITION",
+    description:
+      "A regional high school science and mathematics competition hosted at GE Global Research in Niskayuna.",
+    eligibilityText:
+      "High school students participating as members of a school team. A teacher or approved coach must handle the team registration.",
+    tags: [
+      "science",
+      "stem",
+      "math",
+      "physics",
+      "chemistry",
+      "biology",
+      "earth science",
+      "competition",
+    ],
+    gradeMin: 9,
+    gradeMax: 12,
+    gpaRequirement: null,
+    location: "Niskayuna, NY",
+    remote: "IN_PERSON",
+    cost: "FREE",
+    costAmount: null,
+    award: null,
+    deadline: "2026-11-23",
+    deadlineNote:
+      "Coach preregistration opens October 5, 2026 at noon Eastern. Team 1 registration must be submitted before November 24, 2026.",
+    availabilityWindow:
+      "2027 regional competition; registration opens October 5, 2026.",
+    startDate: "2027-03-06",
+    durationText: "One-day regional competition",
+    experienceRequired: "NONE",
+    requiredMaterials: [],
+    applicationProcessText:
+      "Students participate through a school team. A coach must complete the school and team registration process.",
+    officialUrl:
+      "https://science.osti.gov/wdts/nsb/Regional-Competitions/High-School-Regionals/New-York/NY_New-York-State-Capital-District-High-School-Regional-Science-Bowl",
+    sourceUrl:
+      "https://science.osti.gov/wdts/nsb/Regional-Competitions/High-School-Regionals/New-York/NY_New-York-State-Capital-District-High-School-Regional-Science-Bowl",
+    verificationStatus: "VERIFIED",
+    lastVerifiedAt: "2026-09-05",
+    isDemoData: false,
+    regionTag: "Capital Region, NY",
+  },
+
+  {
+    id: "seaside-sustainability-high-school-internship",
+    title: "Seaside Sustainability High School Internship",
+    organization: "Seaside Sustainability",
+    category: "INTERNSHIP",
+    description:
+      "A flexible environmental internship where high school students can work on sustainability, environmental science, research, education, communications, and other projects.",
+    eligibilityText:
+      "High school students may apply. The organization supports both local and virtual interns, with roles depending on current projects and team needs.",
+    tags: [
+      "environment",
+      "sustainability",
+      "environmental science",
+      "research",
+      "leadership",
+      "virtual",
+    ],
+    gradeMin: 9,
+    gradeMax: 12,
+    gpaRequirement: null,
+    location: "United States / Virtual",
+    remote: "REMOTE",
+    cost: "FREE",
+    costAmount: null,
+    award: null,
+    deadline: null,
+    deadlineNote:
+      "No single current deadline is listed; the organization states that it is continually looking for part-time interns.",
+    availabilityWindow:
+      "Ongoing internship opportunities; availability depends on current projects.",
+    startDate: null,
+    durationText: "Part-time; varies by project",
+    experienceRequired: "NONE",
+    requiredMaterials: [],
+    applicationProcessText:
+      "Review current internship opportunities and apply through Seaside Sustainability.",
+    officialUrl:
+      "https://www.seasidesustainability.org/internship-details",
+    sourceUrl:
+      "https://www.seasidesustainability.org/internship-details",
+    verificationStatus: "VERIFIED",
+    lastVerifiedAt: "2026-09-05",
+    isDemoData: false,
+    regionTag: null,
+  },
 ];
